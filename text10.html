@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .wrap{  display: flex;  padding: 20px;  border: 1px solid red;  height: 600px;  }
+        .wrap div{width: 150px;border: 1px solid #f00;}
+        .wrap div:nth-child(1){  height: 120px;  }
+        .wrap div:nth-child(2){  height: 100px;  }
+        .wrap div:nth-child(3){  height: 40px;  }
+        .wrap div:nth-child(4){  height: 200px;  border: 1px solid #0f0;  }
+        @media all and (min-width: 640px){
+            .wrap{
+                -webkit-justify-content:space-between;//左右两端中间平均分配
+                justify-content:space-between;
+                 border: 1px solid black;
+                -webkit-align-content:center;//垂直居中
+                align-content:center;
+            }
+        }
+        @media all and (max-width: 640px){
+            .wrap{
+                -webkit-justify-content:space-between;//左右两端中间平均分配
+                justify-content:space-between;
+                -webkit-align-items:flex-start;
+                align-items:flex-start;
+                -webkit-flex-wrap:wrap;
+                flex-wrap:wrap;
+            }
+            .wrap div:nth-child(4){
+                -webkit-order:-1;
+                order:-1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+</body>
+</html>
